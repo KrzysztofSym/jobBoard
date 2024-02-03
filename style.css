@@ -1,0 +1,242 @@
+/* Add CSS here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+/*===== VARIABLES CSS =====*/
+
+:root {
+    --h1-fs: 2rem;    --h1-fs-media: 3rem; 
+    --h2-fs: 1.5rem;  --h2-fs-media: 2rem;
+    --h3-fs: 1.3rem;  --h3-fs-media: 1.8rem;
+    --h4-fs: 1.1rem;  --h4-fs-media: 1.5rem;
+    --p-fs: .8rem;    --p-fs-media: 1.1rem;
+    --a-fs: .7rem;    --a-fs-media: 1.1rem;
+    --li-fs: .7rem;   --li-fs-media: 1.1rem;    
+
+    --clr-bg-main: #f4f7ff;
+    --clr-bg-pri: #a9e5e7;
+    --clr-bg-sec: #1f2246;
+    --clr-acc-main: #e8d3fe;
+    --clr-acc-pri: #c7cffa;
+    --clr-acc-sec: #f9d2d7;
+    --clr-acc-thi: #e5d8fd;
+    --clr-acc-four: #c3e9fd;
+    --clr-acc-fif: #f5d5dd;
+    --clr-acc-six: #c0d8f4;
+    --clr-text-main: #67696a;
+    --clr-text-pri: #36454F;  
+    
+    --shadow-color: #33cbb8;    
+    --main-ff: 'Poppins', sans-serif;
+  }
+
+/*===== BASE =====*/
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--main-ff);
+    font-size: var(--p-fs);
+    background: var(--clr-bg-main);
+    color: var(--clr-text-main);
+    width: 100%;
+    min-height: 100vh;
+}   
+
+h1, h2, h3, h4,
+p, a, li {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-text-main);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+
+    }
+}
+    /* animation: scaleUp 1s ease-in-out;
+    transform-origin: center center; */
+
+/*===== BUTTONS =====*/
+
+.btn {
+    display: inline-block;
+    background-color:  #fff;
+    color: var(--clr-text-main);
+    padding: .8rem 1.5rem;
+    font-weight: 600;
+    width: 100%;
+    border: 1px solid var(--clr-bg-sec);
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    transition: .2s;
+}
+  
+.btn:hover {
+    will-change: transform;
+    color: #fff;
+}
+
+
+.btn:before {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr-bg-sec);
+    transform: translate(0, -100%);
+    z-index: -1;
+    transition: transform 0.4s cubic-bezier(0.5,1.6,0.4,0.7);    
+}
+
+.btn:hover::before{
+    transform: translate(0, 0);
+}
+
+.btn:active {
+    scale: .97;
+}
+
+/*===== PROJECT CSS =====*/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 900px;
+    width: 90%;
+    position: relative;
+    animation: scaleUp 1s ease-in-out;
+    transform-origin: center center;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.container > p {
+    margin: 2rem auto 1rem;
+    text-align: center;
+    max-width: 500px;
+    width: 80%;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.item {
+    padding: 2rem;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px -10px #000;
+}
+
+.position {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.iconWrapper {
+    width: 50px;
+    aspect-ratio: 1;
+    background-color: #009885;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.item:nth-of-type(1) .iconWrapper {
+    background: linear-gradient(-45deg, var(--clr-acc-main), var(--clr-acc-pri));
+}
+.item:nth-of-type(2) .iconWrapper {
+    background: linear-gradient(-45deg, var(--clr-acc-sec), var(--clr-acc-sec));
+}
+.item:nth-of-type(3) .iconWrapper {
+    background: linear-gradient(-45deg, var(--clr-acc-thi), var(--clr-acc-four));
+}
+.item:nth-of-type(4) .iconWrapper {
+    background: linear-gradient(-45deg, var(--clr-acc-four), var(--clr-acc-four));
+}
+.item:nth-of-type(5) .iconWrapper {
+    background: linear-gradient(-45deg, var(--clr-acc-fif), var(--clr-acc-six));
+}
+.item:nth-of-type(6) .iconWrapper {
+    background: linear-gradient(-45deg, var(--clr-acc-six), var(--clr-acc-fif));
+}
+
+
+.iconWrapper svg {
+    font-size: 1rem;
+    color: var(--clr-text-main);
+    transition: .3s;
+}
+
+.item:hover svg {
+    transform: rotate(10deg) scale(1.2);
+}
+
+@media screen and (max-width: 800px) {
+    .items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container {
+        min-width: 350px;
+    }
+    
+    .items {
+        grid-template-columns: 1fr;
+        margin: 0 1rem;
+    }
+}
